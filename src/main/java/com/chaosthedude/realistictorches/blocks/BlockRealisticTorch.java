@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemFlintAndSteel;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
@@ -30,7 +31,7 @@ public class BlockRealisticTorch extends BlockTorch {
 
 	public boolean lightTorch(World world, BlockPos pos, EntityPlayer player, ItemStack heldItem) {
 		if (world.getBlockState(pos).getBlock() instanceof BlockRealisticTorch) {
-			if (!heldItem.isEmpty() && (heldItem.getItem() == Items.FLINT_AND_STEEL || (ConfigHandler.matchboxCreatesFire && heldItem.getItem() == RealisticTorchesItems.matchbox)) && (!ConfigHandler.noRelightEnabled || !isLit())) {
+			if (!heldItem.isEmpty() && (heldItem.getItem() instanceof ItemFlintAndSteel || (ConfigHandler.matchboxCreatesFire && heldItem.getItem() == RealisticTorchesItems.matchbox)) && (!ConfigHandler.noRelightEnabled || !isLit())) {
 				heldItem.damageItem(1, player);
 				playIgniteSound(world, pos);
 				if (!world.isRainingAt(pos)) {

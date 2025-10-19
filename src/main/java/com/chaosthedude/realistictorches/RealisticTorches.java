@@ -28,7 +28,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class RealisticTorches {
 
 	public static final String MODID = "realistictorches";
-	public static final String NAME = "Realistic Torches";
+	public static final String NAME = "Realistic Torches (Project Virulence Fork)";
 	public static final String VERSION = "2.1.2";
 
 	public static final Logger logger = LogManager.getLogger(MODID);
